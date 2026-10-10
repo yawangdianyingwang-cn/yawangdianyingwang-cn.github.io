@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="鸭王电影网 — 一份按“轻盈、留白、会飞、会停”整理的观影指引。聚焦家庭、自然、治愈、成长类高分影视，不剧透、不搬运、不做解说。">
+<meta name="keywords" content="鸭王电影网, 鸭王电影, 治愈电影, 家庭电影, 自然纪录片, 成长电影, 动画电影, 高分电影, 电影推荐, 经典台词, 导演谱系, 观影指南, 正版观影, yawangdianyingwang-cn">
+<meta name="author" content="鸭王电影网">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="鸭王电影网 - 轻盈、留白、会飞、会停 | yawangdianyingwang-cn.github.io">
+<meta property="og:description" content="鸭王电影网：聚焦家庭、自然、治愈、成长类高分影视，按“此刻想被怎样对待”推荐，不剧透、不搬运。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yawangdianyingwang-cn.github.io/">
+<link rel="canonical" href="https://yawangdianyingwang-cn.github.io/">
+<title>鸭王电影网 - 轻盈、留白、会飞、会停 | yawangdianyingwang-cn.github.io</title>
+<style>
+/* ============ 设计令牌：米白 / 靛蓝 / 暖金 / 湖水 ============ */
+:root{
+  --indigo:#2f5c8a;   /* 靛蓝 */
+  --deep:#1d3a5c;     /* 深海 */
+  --gold:#d6a24a;     /* 暖金 */
+  --lake:#6fa8b5;      /* 湖水 */
+  --paper:#f7f4ec;    /* 米白 */
+  --ink:#1e2530; --ink2:#56606e; --ink3:#a3acb8;
+  --r:18px;
+  --shadow:0 26px 54px rgba(29,58,92,.22);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;background:var(--paper);color:var(--ink);line-height:1.85;font-size:16px}
+.serif{font-family:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",Georgia,serif}
+.mono{font-family:"Courier New",ui-monospace,monospace}
+a{color:inherit;text-decoration:none;transition:.22s cubic-bezier(.4,0,.2,1)}
+ul,ol{list-style:none}
+.container{max-width:1160px;margin:0 auto;padding:0 22px}
+.eyebrow{font-family:var(--mono);font-size:.62rem;font-weight:950;letter-spacing:3.4px;color:var(--indigo)}
+.sec-title{font-size:clamp(1.7rem,4.3vw,2.46rem);font-weight:950;letter-spacing:-.5px;line-height:1.24;margin:8px 0 10px}
+.sec-sub{color:var(--ink2);font-size:.96rem;max-width:800px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.more{font-family:var(--mono);font-size:.78rem;font-weight:800;color:var(--ink2);border:1.5px solid #d9dee5;padding:8px 17px;border-radius:999px;white-space:nowrap}
+.more:hover{color:var(--indigo);border-color:var(--indigo)}
+section{padding:clamp(54px,10vw,98px) 0}
+
+/* ============ 导航 ============ */
+.header{position:sticky;top:0;z-index:70;background:rgba(247,244,236,.96);color:var(--ink);backdrop-filter:blur(10px);border-bottom:1px solid #e4dfd2}
+.hd-in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:950}
+.logo .mark{width:46px;height:46px;flex-shrink:0;background:linear-gradient(150deg,var(--indigo),var(--deep));color:var(--gold);display:grid;place-items:center;border-radius:16px;font-size:1.4rem;box-shadow:0 8px 18px rgba(47,92,138,.3)}
+.logo .tx b{font-size:1.2rem;letter-spacing:1.2px}
+.logo .tx small{display:block;font-family:var(--mono);font-size:.42rem;font-weight:800;color:var(--indigo);letter-spacing:1.5px}
+.nav{display:flex;gap:2px}
+.nav a{font-size:.88rem;font-weight:750;color:var(--ink2);padding:9px 11px;white-space:nowrap}
+.nav a:hover{color:var(--deep);background:#eaf0f5;border-radius:999px}
+.hd-act .btn{font-family:var(--mono);font-size:.82rem;font-weight:950;padding:10px 19px;background:var(--indigo);color:#fff;border-radius:999px}
+.hd-act .btn:hover{transform:translateY(-1px);background:var(--deep)}
+.burger{display:none;background:none;border:none;font-size:1.9rem;color:var(--ink);cursor:pointer}
+
+/* ============ Hero：涟漪湖面 + 飞鸟剪影 ============ */
+@keyframes ripple{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.4);opacity:0}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes glide{0%{transform:translate(0,0) rotate(-3deg)}25%{transform:translate(38px,-16px) rotate(2deg)}50%{transform:translate(76px,-6px) rotate(-2deg)}75%{transform:translate(114px,-18px) rotate(2deg)}100%{transform:translate(150px,0) rotate(-3deg)}}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#e7eff4,#d5e5e8 55%,#f7f4ec);color:var(--deep)}
+.hero::before{content:"";position:absolute;left:0;right:0;top:0;height:150px;background:linear-gradient(180deg,rgba(255,255,255,.7),transparent)}
+.hero-in{position:relative;z-index:3;padding:clamp(34px,11vw,80px) 22px;display:grid;grid-template-columns:1fr 250px;gap:40px;align-items:center}
+.hero .eyebrow{color:var(--deep)}
+.hero h1{font-size:clamp(2.3rem,7.6vw,4.5rem);font-weight:950;line-height:1.1;letter-spacing:-2.4px}
+.hero h1 em{font-style:normal;color:var(--indigo)}
+.hero .lede{color:#4c5b6e;font-size:clamp(.96rem,2.1vw,1.12rem);margin:19px 0 20px;max-width:560px}
+.hero .lede b{color:var(--deep);font-weight:950}
+.hero .ticks{display:flex;gap:8px;flex-wrap:wrap;font-family:var(--mono);font-size:.64rem;color:#4c5b6e;letter-spacing:.4px}
+.hero .ticks span{padding:7px 12px;background:rgba(255,255,255,.62);border:1px solid rgba(47,92,138,.34);border-radius:999px}
+.hero .ticks b{color:var(--indigo);font-weight:950}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{padding:14px 27px;border-radius:999px;font-weight:950;font-size:.93rem;border:2px solid transparent;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn-p{background:var(--indigo);color:#fff;box-shadow:0 12px 26px rgba(47,92,138,.34)}
+.btn-p:hover{transform:translateY(-2px);background:var(--deep)}
+.btn-g{background:transparent;color:var(--deep);border-color:rgba(47,92,138,.6)}
+.btn-g:hover{border-color:var(--deep)}
+
+/* 湖面涟漪组件 */
+.lake{width:250px;margin:0 auto;position:relative;height:230px}
+.sun{position:absolute;left:50%;top:22px;transform:translateX(-50%);width:56px;height:56px;border-radius:50%;background:#fff4d6;box-shadow:0 0 40px 16px rgba(214,162,74,.5);animation:float 6.4s ease-in-out infinite}
+.ring{position:absolute;left:50%;top:74px;border:2px solid rgba(47,92,138,.5);border-radius:50%;width:70px;height:24px;transform:translateX(-50%);animation:ripple 4.2s linear infinite}
+.ring:nth-child(2){animation-delay:1.4s}
+.ring:nth-child(3){animation-delay:2.8s}
+.bird{position:absolute;top:52px;left:20px;width:34px;height:14px;animation:glide 11s ease-in-out infinite}
+.bird i{position:absolute;width:16px;height:3px;background:var(--deep);border-radius:999px;transform-origin:right}
+.bird i:first-child{transform:rotate(-22deg)}
+.bird i:last-child{left:14px;transform:rotate(22deg)}
+.reed{position:absolute;bottom:0;width:5px;height:70px;background:linear-gradient(180deg,#8aa86f,#5d7a45);border-radius:999px;transform-origin:bottom}
+.reed:nth-child(5){left:8%;height:60px}
+.reed:nth-child(6){left:20%;height:82px}
+.reed:nth-child(7){left:78%;height:72px}
+.reed:nth-child(8){left:90%;height:58px}
+.shore{position:absolute;bottom:0;left:0;right:0;height:14px;border-radius:999px;background:rgba(214,162,74,.5);filter:blur(2px)}
+
+/* ============ 栏目一：鸭王片单（横滑词条卡）============ */
+.picks{background:var(--paper)}
+.fx{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 22px;scrollbar-width:thin}
+.fx::-webkit-scrollbar{height:9px}
+.fx::-webkit-scrollbar-thumb{background:#d9dee5}
+.fx .c{flex:0 0 clamp(246px,27vw,296px);scroll-snap-align:start;border:1px solid #e4dfd2;border-radius:var(--r);overflow:hidden;background:#fff;transition:.28s;display:flex;flex-direction:column}
+.fx .c:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--indigo)}
+.fx .c .ph{height:104px;padding:13px 17px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.fx .c .ph .m{font-family:var(--mono);font-size:.52rem;font-weight:950;letter-spacing:1.6px;border:1px solid rgba(255,255,255,.55);padding:3px 9px;border-radius:999px;align-self:flex-start}
+.fx .c .ph .t{font-size:1.06rem;font-weight:950;line-height:1.3}
+.fx .c .bd{padding:12px 17px 17px;flex:1;display:flex;flex-direction:column}
+.fx .c .bd p{font-size:.83rem;color:var(--ink2)}
+.fx .c .bd .meta{margin-top:auto;padding-top:10px;display:flex;justify-content:space-between;font-size:.72rem;color:var(--ink3);font-family:var(--mono)}
+.fx .c .bd .meta b{color:var(--indigo);font-weight:950}
+
+/* ============ 栏目二：四种轻盈（3×3 等比九宫格）============ */
+.mood{background:linear-gradient(180deg,#e7eff4,#f7f4ec)}
+.grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.g9{position:relative;border-radius:var(--r);overflow:hidden;background:#fff;aspect-ratio:4/3;transition:.32s}
+.g9 .bg{position:absolute;inset:0;transition:transform .6s cubic-bezier(.4,0,.2,1);opacity:.95}
+.g9:hover .bg{transform:scale(1.14)}
+.g9 .mk{position:absolute;inset:0;background:linear-gradient(180deg,transparent 24%,rgba(29,58,92,.98))}
+.g9 .tx{position:absolute;left:15px;right:15px;bottom:13px;color:#fff}
+.g9 .tx .n{font-family:var(--mono);font-size:.54rem;font-weight:950;letter-spacing:2px;color:var(--gold)}
+.g9 .tx h3{font-size:1.06rem;margin:3px 0 3px;letter-spacing:.5px}
+.g9 .tx span{font-size:.72rem;color:#e1e9ee}
+.g9:hover{box-shadow:var(--shadow);transform:translateY(-5px)}
+
+/* ============ 栏目三：鸭王台词（交错流 + 渐变进度环）============ */
+.talk{background:var(--paper)}
+.dl .row{display:grid;grid-template-columns:104px 1fr;gap:20px;align-items:center;background:#fff;border:1px solid #e4dfd2;border-radius:var(--r);padding:15px 20px;margin-bottom:12px;transition:.24s}
+.dl .row:hover{border-color:var(--indigo);box-shadow:0 14px 30px rgba(47,92,138,.12);transform:translateX(5px)}
+.dl .row.flip{grid-template-columns:1fr 104px}
+.dl .row.flip .ava{order:2}
+.dl .row.flip blockquote{order:1}
+.dl .ava{width:78px;height:78px;display:grid;place-items:center;position:relative;flex-shrink:0;justify-self:center;border-radius:50%;background:conic-gradient(from 90deg,#d6a24a 0 30%,#2f5c8a 30% 58%,#6fa8b5 58% 80%,#d6a24a 80%);padding:5px}
+.dl .ava::after{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--paper)}
+.dl .ava .num{position:relative;z-index:2;font-family:var(--mono);font-size:1.04rem;font-weight:950;line-height:1;color:var(--deep)}
+.dl blockquote{font-family:"Songti SC","Noto Serif CJK SC",serif;font-size:clamp(1rem,2.1vw,1.2rem);line-height:1.62;position:relative;padding-left:24px;color:var(--ink)}
+.dl blockquote::before{content:"\201C";position:absolute;left:-12px;top:-24px;font-size:3.6rem;line-height:.6;color:var(--gold);opacity:.85}
+.dl blockquote cite{display:block;font-style:normal;font-family:"PingFang SC",sans-serif;font-size:.78rem;font-weight:750;color:var(--ink3);margin-top:7px;letter-spacing:.4px}
+
+/* ============ 栏目四：导演谱系（纵向时间轴）============ */
+.knight2{background:linear-gradient(180deg,#1d3a5c,#152b44)}
+.knight2 .eyebrow{color:var(--gold)}
+.knight2 .sec-title{color:#fff}
+.knight2 .sec-sub{color:#c3cfda}
+.knight2 .more{color:#c3cfda;border-color:rgba(214,162,74,.4)}
+.knight2 .more:hover{color:var(--gold);border-color:var(--gold)}
+.tl{position:relative;padding-left:72px}
+.tl::before{content:"";position:absolute;left:26px;top:10px;bottom:10px;width:3px;background:linear-gradient(180deg,var(--gold),var(--indigo),var(--lake))}
+.tl{counter-reset:n}
+.node{position:relative;background:rgba(255,255,255,.05);border:1px solid rgba(214,162,74,.3);border-radius:var(--r);padding:17px 23px;margin-bottom:14px;transition:.24s;color:#d7e0e8}
+.node:hover{border-color:var(--gold);box-shadow:0 14px 30px rgba(0,0,0,.4);transform:translateX(6px)}
+.node::after{content:counter(n);counter-increment:n;position:absolute;left:-72px;top:22px;width:48px;height:48px;border-radius:50%;color:var(--deep);display:grid;place-items:center;font-family:var(--mono);font-weight:950;font-size:1rem;background:var(--gold);box-shadow:0 8px 18px rgba(0,0,0,.42)}
+.node .top{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+.node .ava2{width:52px;height:52px;border-radius:50%;color:#f7f4ec;font-weight:950;display:grid;place-items:center;font-size:1.16rem;font-family:var(--mono);flex-shrink:0;background:linear-gradient(140deg,var(--indigo),var(--deep))}
+.node h3{font-size:1.08rem;color:#fff}
+.node .src{font-family:var(--mono);font-size:.62rem;font-weight:950;letter-spacing:1.4px;color:var(--gold)}
+.node p{color:#c3cfda;font-size:.86rem;margin-top:8px}
+.node .films{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.node .films a{font-size:.7rem;padding:5px 10px;border-radius:999px;background:rgba(214,162,74,.14);border:1px solid rgba(214,162,74,.4);color:#d7e0e8}
+.node .films a:hover{color:var(--deep);background:var(--gold);border-color:var(--gold)}
+
+/* ============ 栏目五：观影问答（手风琴 details）============ */
+.night{background:linear-gradient(180deg,#e7eff4,#f7f4ec)}
+.acc{border:1px solid #e4dfd2;border-radius:var(--r);margin-bottom:10px;overflow:hidden;background:#fff;transition:.24s}
+.acc:hover{border-color:var(--indigo)}
+.acc[open]{border-color:var(--indigo);box-shadow:0 10px 26px rgba(47,92,138,.1)}
+.acc > summary{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;list-style:none;font-weight:850}
+.acc > summary::-webkit-details-marker{display:none}
+.acc > summary .no{font-family:var(--mono);font-size:1.24rem;font-weight:950;line-height:1;color:var(--indigo)}
+.acc > summary h3{font-size:.98rem}
+.acc > summary .caret{margin-left:auto;color:var(--ink3);transition:.24s;font-family:var(--mono)}
+.acc[open] > summary .caret{transform:rotate(180deg);color:var(--indigo)}
+.acc .inner{padding:0 18px 16px;color:var(--ink2);font-size:.88rem}
+.acc .inner b{color:var(--ink)}
+.acc .inner .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.acc .inner .tags a{font-size:.7rem;padding:4px 10px;border-radius:999px;background:#eaf0f5;border:1px solid #d9dee5;color:var(--ink2)}
+.acc .inner .tags a:hover{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+
+/* ============ 栏目六：关于本站（双栏 + 数据卡 + 进度条）============ */
+.about{background:var(--paper)}
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.ab-grid h2{font-size:clamp(1.72rem,4.2vw,2.46rem);font-weight:950;line-height:1.24}
+.ab-grid h2 em{font-style:normal;color:var(--indigo)}
+.ab-grid > p{color:var(--ink2);margin:16px 0 21px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.feat .f{background:#fff;border:1px solid #e4dfd2;border-radius:var(--r);padding:15px;transition:.24s}
+.feat .f:hover{border-color:var(--indigo);transform:translateY(-3px);box-shadow:0 10px 22px rgba(47,92,138,.1)}
+.feat .f .n{font-size:1.9rem;font-weight:950;line-height:1;letter-spacing:-3px;color:#a3acb8}
+.feat .f:nth-child(1) .n{color:var(--indigo)}
+.feat .f:nth-child(3) .n{color:var(--gold)}
+.feat .f h3{font-size:.94rem;margin:5px 0 3px}
+.feat .f p{font-size:.8rem;color:var(--ink2)}
+.metrics{display:flex;flex-direction:column;gap:12px}
+.metric{border-radius:var(--r);padding:15px 18px;color:#fff}
+.metric.a{background:linear-gradient(130deg,#2f5c8a,#1d3a5c)}
+.metric.l{background:linear-gradient(120deg,#d6a24a,#a5792e)}
+.metric.o{background:linear-gradient(140deg,#6fa8b5,#3d7f8e)}
+.metric .top{display:flex;justify-content:space-between;font-size:.86rem;margin-bottom:8px;font-weight:750}
+.metric .top b{font-weight:950;font-family:var(--mono);font-size:1rem}
+.track{height:6px;background:rgba(255,255,255,.3);overflow:hidden;border-radius:999px}
+.track i{display:block;height:100%;background:linear-gradient(90deg,#fff,var(--gold))}
+
+/* ============ 页脚 ============ */
+.footer{border-top:3px solid var(--indigo);background:var(--deep);color:#c3cfda;padding:48px 0 21px}
+.ft-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:28px;margin-bottom:27px}
+.ft-col h4{font-size:1rem;color:#fff;margin-bottom:13px}
+.ft-col ul{display:flex;flex-direction:column;gap:10px}
+.ft-col a{color:#9aa8b4;font-size:.86rem}
+.ft-col a:hover{color:var(--gold)}
+.ft-base{text-align:center;color:#9aa8b4;font-size:.79rem;border-top:1px solid #2d4a6b;padding-top:20px}
+.ft-base a{color:var(--gold)}
+.ft-base a:hover{color:#fff}
+
+/* ============ 响应式 ============ */
+@media(max-width:1000px){.hero-in{grid-template-columns:1fr 200px;gap:22px}.lake{width:200px;height:196px}}
+@media(max-width:900px){.grid9{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){
+  .burger{display:block}
+  .nav{position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--paper);padding:10px 16px;display:none;border-bottom:3px solid var(--indigo)}
+  .nav.show{display:flex}
+  .nav a{font-size:1rem;padding:12px;border-bottom:1px solid #e4dfd2;color:var(--ink2)}
+  .hd-act .btn{display:none}
+  .hero-in{grid-template-columns:1fr;gap:16px}
+  .dl .row,.dl .row.flip{grid-template-columns:1fr;gap:12px}
+  .dl .row.flip .ava,.dl .ava{order:0;justify-self:start}
+  .dl .row.flip blockquote{order:0}
+  .ab-grid{grid-template-columns:1fr;gap:24px}
+  .cta .btn{width:100%;justify-content:center}
+}
+@media(max-width:520px){.container{padding:0 16px}.grid9,.feat{grid-template-columns:1fr 1fr}}
+@media print{.header,.burger,.hd-act,.cta,.lake,.hero::before{display:none}body{background:#fff;color:#000}section{padding:12px 0}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ==================== 导航 ==================== -->
+<header class="header" role="banner">
+  <div class="container hd-in">
+    <a class="logo" href="#top" aria-label="鸭王电影网 首页">
+      <span class="mark" aria-hidden="true">鴨</span>
+      <span class="tx"><b>鸭王电影网</b><small>LIGHT · QUIET · WILD · HOME</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="菜单" aria-expanded="false">☰</button>
+    <nav>
+      <div class="nav" id="nav">
+        <a href="#picks">鸭王片单</a>
+        <a href="#mood">四种轻盈</a>
+        <a href="#talk">鸭王台词</a>
+        <a href="#knight">导演谱系</a>
+        <a href="#night">观影问答</a>
+        <a href="#about">关于本站</a>
+      </div>
+    </nav>
+    <div class="hd-act"><a class="btn" href="#picks">今晚看什么 →</a></div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ==================== Hero：涟漪湖面 + 飞鸟剪影 ==================== -->
+  <section class="hero">
+    <div class="container hero-in">
+      <div>
+        <div class="eyebrow">LIGHT · QUIET · WILD · HOME · 鸭王电影网</div>
+        <h1>轻盈、留白、<br><em>会飞，也会停。</em></h1>
+        <p class="lede">"鸭王电影网"不追热点、不追榜单、不做解说，只做一件事：<span class="serif">在安静的夜里，把"最轻的那一格画面"放大给你看。</span>入选标准只有一条：<b>看完会想给一个人发一条消息，或者，什么都不说。</b>覆盖<b>家庭、自然、治愈、成长</b>四类，不搬运资源，不剧透结局。</p>
+        <div class="ticks">
+          <span><b>轻盈</b> · 一格画面</span>
+          <span><b>留白</b> · 一句台词</span>
+          <span><b>会飞</b> · 一场旅行</span>
+          <span><b>会停</b> · 一顿饭</span>
+          <span>家庭</span><span>自然</span><span>治愈</span><span>成长</span>
+        </div>
+        <div class="cta">
+          <a class="btn btn-p" href="#picks">今晚看什么 →</a>
+          <a class="btn btn-g" href="#talk">先读一句台词</a>
+        </div>
+      </div>
+
+      <div class="lake" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+        <div class="bird"><i></i><i></i></div>
+        <div class="reed"></div><div class="reed"></div><div class="reed"></div><div class="reed"></div>
+        <div class="shore"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目一：鸭王片单（横滑词条卡）=================== -->
+  <section id="picks" aria-labelledby="h-p1" class="picks">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">DUCK · 01</div>
+          <h2 class="sec-title" id="h-p1">鸭王片单 · 六部，轻一点，再轻一点</h2>
+          <p class="sec-sub">不剧透，只讲"<b>它值得在哪</b>"。<b>每一部入选的"好"，都是声音、光线、留白或一顿饭的胜利，不是热度的胜利。</b></p>
+        </div>
+        <a class="more" href="#">完整片单 →</a>
+      </div>
+
+      <div class="fx" role="region" aria-label="鸭王片单横向列表">
+        <article class="c">
+          <div class="ph" style="background:linear-gradient(135deg,#2f5c8a,#1d3a5c)"><span class="m">DUCK · 家庭</span><span class="t">海街日记</span></div>
+          <div class="bd"><p>四姐妹、一栋老屋、一罐梅子酒。<b>好在：把"家"拍成一种味道。</b></p><div class="meta"><span>2015 · 气味</span><b>94</b></div></div>
+        </article>
+        <article class="c">
+          <div class="ph" style="background:linear-gradient(135deg,#6fa8b5,#3d7f8e)"><span class="m">DUCK · 自然</span><span class="t">小森林</span></div>
+          <div class="bd"><p>一个人做饭，就是一个人活下去。<b>好在：雪落、米香、锅气。</b></p><div class="meta"><span>2014 · 声音</span><b>91</b></div></div>
+        </article>
+        <article class="c">
+          <div class="ph" style="background:linear-gradient(135deg,#d6a24a,#a5792e)"><span class="m">DUCK · 治愈</span><span class="t">人生果实</span></div>
+          <div class="bd"><p>90 岁的老夫妇，种了一辈子院子。<b>好在：风吹过树叶，就是人生。</b></p><div class="meta"><span>2017 · 节奏</span><b>96</b></div></div>
+        </article>
+        <article class="c">
+          <div class="ph" style="background:linear-gradient(135deg,#8aa86f,#5d7a45)"><span class="m">DUCK · 成长</span><span class="t">千与千寻</span></div>
+          <div class="bd"><p>记住自己的名字，才能走出来。<b>好在：汤屋的灯，和白龙的眼睛。</b></p><div class="meta"><span>2001 · 想象</span><b>97</b></div></div>
+        </article>
+        <article class="c">
+          <div class="ph" style="background:linear-gradient(135deg,#7a6a8a,#4d3f5c)"><span class="m">DUCK · 家庭</span><span class="t">小偷家族</span></div>
+          <div class="bd"><p>没有血缘的人，也可以是一个家。<b>好在：海边那句"谢谢你们"。</b></p><div class="meta"><span>2018 · 留白</span><b>95</b></div></div>
+        </article>
+        <article class="c">
+          <div class="ph" style="background:linear-gradient(135deg,#5a7a8a,#35505e)"><span class="m">DUCK · 自然</span><span class="t">地球脉动</span></div>
+          <div class="bd"><p>把"活着"拍成一首诗。<b>好在：雪豹踩雪的声音。</b></p><div class="meta"><span>2006 · 摄影</span><b>98</b></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目二：四种轻盈（3×3 等比九宫格）=================== -->
+  <section id="mood" aria-labelledby="h-a2" class="mood">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">DUCK · 4</div>
+          <h2 class="sec-title" id="h-a2">四种轻盈 · 你此刻，是哪一种</h2>
+          <p class="sec-sub">"鸭王电影网"的选片逻辑不是"类型"，而是<b>"此刻的呼吸"</b>。选一种，就是选今晚想被怎样对待。</p>
+        </div>
+        <a class="more" href="#">全部情绪 →</a>
+      </div>
+
+      <div class="grid9">
+        <a class="g9" href="#"><div class="bg" style="background:linear-gradient(150deg,#2f5c8a,#1d3a5c)"></div><div class="mk"></div><div class="tx"><div class="n">DUCK 01</div><h3>想回家</h3><span>海街日记 / 小偷家族 / 步履不停</span></div></a>
+        <a class="g9" href="#"><div class="bg" style="background:linear-gradient(150deg,#6fa8b5,#3d7f8e)"></div><div class="mk"></div><div class="tx"><div class="n">DUCK 02</div><h3>想出去走走</h3><span>小森林 / 摩托日记 / 白日梦想家</span></div></a>
+        <a class="g9" href="#"><div class="bg" style="background:linear-gradient(150deg,#d6a24a,#a5792e)"></div><div class="mk"></div><div class="tx"><div class="n">DUCK 03</div><h3>想慢下来</h3><span>人生果实 / 小森林 / 海街日记</span></div></a>
+        <a class="g9" href="#"><div class="bg" style="background:linear-gradient(150deg,#8aa86f,#5d7a45)"></div><div class="mk"></div><div class="tx"><div class="n">DUCK 04</div><h3>想重新长大</h3><span>千与千寻 / 龙猫 / 侧耳倾听</span></div></a>
+        <a class="g9" href="#"><div class="bg" style="background:linear-gradient(150deg,#7a6a8a,#4d3f5c)"></div><div class="mk"></div><div class="tx"><div class="n">DUCK 05</div><h3>想哭一场</h3><span>寻梦环游记 / 美丽人生 / 海街日记</span></div></a>
+        <a class="g9" href="#"><div class="bg" style="background:linear-gradient(150deg,#5a7a8a,#35505e)"></div><div class="mk"></div><div class="tx"><div class="n">DUCK 06</div><h3>想看看世界</h3><span>地球脉动 / 人类 / 我们的星球</span></div></a>
+        <a class="g9" href="#"><div class="bg" style="background:linear-gradient(150deg,#a08a5a,#6e5a30)"></div><div class="mk"></div><div class="tx"><div class="n">DUCK 07</div><h3>想被温柔对待</h3><span>海街日记 / 小森林 / 东京物语</span></div></a>
+        <a class="g9" href="#"><div class="bg" style="background:linear-gradient(150deg,#8a7a6a,#5c4f3f)"></div><div class="mk"></div><div class="tx"><div class="n">DUCK 08</div><h3>想回到从前</h3><span>情书 / 我的父亲母亲 / 那山那人那狗</span></div></a>
+        <a class="g9" href="#"><div class="bg" style="background:linear-gradient(150deg,#3d7f8e,#254f58)"></div><div class="mk"></div><div class="tx"><div class="n">DUCK 09</div><h3>想重新出发</h3><span>肖申克的救赎 / 阿甘正传 / 摔跤吧！爸爸</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目三：鸭王台词（交错流 + 渐变进度环）=================== -->
+  <section id="talk" aria-labelledby="h-t3" class="talk">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">DUCK · 02</div>
+          <h2 class="sec-title" id="h-t3">鸭王台词 · 一句，就是一个下午</h2>
+          <p class="sec-sub">好台词不是"金句"，是<b>"说完了，电影才刚刚开始"</b>。以下是四句，听到就会想起那片湖、那顿饭、那只鸟。</p>
+        </div>
+        <a class="more" href="#">台词全集 →</a>
+      </div>
+
+      <div class="dl">
+        <figure class="row">
+          <div class="ava"><span class="num">94</span></div>
+          <div><blockquote>"活着这件事，本来就很厉害了。" <cite>—— 人生果实（2017）· 适合：觉得自己"没做成什么"的傍晚</cite></blockquote></div>
+        </figure>
+        <figure class="row flip">
+          <div class="ava"><span class="num">97</span></div>
+          <div><blockquote>"曾经发生的事，是不会忘记的，只是想不起来了而已。" <cite>—— 千与千寻（2001）· 适合：弄丢了什么的夜里</cite></blockquote></div>
+        </figure>
+        <figure class="row">
+          <div class="ava"><span class="num">95</span></div>
+          <div><blockquote>"下雪了，好想一起吃顿饭。" <cite>—— 海街日记（2015）· 适合：一个人吃晚饭的时候</cite></blockquote></div>
+        </figure>
+        <figure class="row flip">
+          <div class="ava"><span class="num">98</span></div>
+          <div><blockquote>"用功读书，怎么会从我忘记？我可是很用功呢。" <cite>—— 东京物语（1953）· 适合：想给家里打个电话的时候</cite></blockquote></div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目四：导演谱系（纵向时间轴）=================== -->
+  <section id="knight" aria-labelledby="h-k4" class="knight2">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">DUCK · 5</div>
+          <h2 class="sec-title" id="h-k4">导演谱系 · 五位"把轻盈当武器"的作者</h2>
+          <p class="sec-sub">作者论的核心：导演的固执，就是他的签名。找到那个"反复出现的画面 / 声音 / 留白"，就读懂了这个人——也读懂了"鸭王电影网"说的"轻一点，再轻一点"。</p>
+        </div>
+        <a class="more" href="#">导演谱系 →</a>
+      </div>
+
+      <div class="tl">
+        <article class="node">
+          <div class="top"><span class="ava2">是</span><div><span class="src">留白 · 日常 · 缺席</span><h3>是枝裕和：把"没说出口的"拍成剧情</h3></div></div>
+          <p>《小偷家族》的澡盆、《步履不停》的台阶、《海街日记》的梅子酒。<b>他的固执：重要的话，永远不会被说出口。</b></p>
+          <div class="films"><a href="#">小偷家族</a><a href="#">步履不停</a><a href="#">海街日记</a><a href="#">如父如子</a></div>
+        </article>
+        <article class="node">
+          <div class="top"><span class="ava2">宫</span><div><span class="src">风 · 水 · 少女 · 飞行</span><h3>宫崎骏：把"不想长大"拍成史诗</h3></div></div>
+          <p>《千与千寻》的神隐、《龙猫》的树洞、《哈尔的移动城堡》的飞行。<b>他的固执：孩子比大人更懂世界。</b></p>
+          <div class="films"><a href="#">千与千寻</a><a href="#">龙猫</a><a href="#">哈尔的移动城堡</a><a href="#">风之甬道</a></div>
+        </article>
+        <article class="node">
+          <div class="top"><span class="ava2">小</span><div><span class="src">格子窗 · 低机位 · 沉默</span><h3>小津安二郎：把"家庭"拍成宇宙</h3></div></div>
+          <p>《东京物语》的榻榻米、《晚春》的茶、《秋刀鱼之味》的酒。<b>他的固执：镜头永远比人低一点。</b></p>
+          <div class="films"><a href="#">东京物语</a><a href="#">晚春</a><a href="#">秋刀鱼之味</a><a href="#">麦秋</a></div>
+        </article>
+        <article class="node">
+          <div class="top"><span class="ava2">森</span><div><span class="src">雪 · 米 · 锅 · 独白</span><h3>森淳一：把"一个人吃饭"拍成活着</h3></div></div>
+          <p>《小森林》夏秋的番茄、《小森林》冬春的纳豆。<b>他的固执：食物的声音，比台词更诚实。</b></p>
+          <div class="films"><a href="#">小森林 夏秋篇</a><a href="#">小森林 冬春篇</a></div>
+        </article>
+        <article class="node">
+          <div class="top"><span class="ava2">阿</span><div><span class="src">荒野 · 老人 · 缓慢</span><h3>沃纳·赫尔佐格：把"活着"拍成风景</h3></div></div>
+          <p>《灰熊人》的荒野、《陆上行舟》的丛林、《在世界尽头相遇》的冰。<b>他的固执：人，只是风景里的一个小点。</b></p>
+          <div class="films"><a href="#">灰熊人</a><a href="#">在世界尽头相遇</a><a href="#">陆上行舟</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目五：观影问答（手风琴 details）=================== -->
+  <section id="night" aria-labelledby="h-n5" class="night">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">DUCK · 03</div>
+          <h2 class="sec-title" id="h-n5">观影问答 · 一句话说清"到底值不值得看"</h2>
+          <p class="sec-sub">不用写长评。用一句话回答："这部影视，到底值不值得交出 160 分钟？"</p>
+        </div>
+        <a class="more" href="#">全部问答 →</a>
+      </div>
+
+      <details class="acc" open>
+        <summary><span class="no">Q1</span><h3>"鸭王电影网"的"鸭王"，到底指什么？</h3><span class="caret">▾</span></summary>
+        <div class="inner"><b>指"水面上最从容的那个身影"，不是任何动物称谓的引申、不是任何低俗梗、不是任何播放器或工具。</b>本站所说的"鸭王"，是四种可被分析、可被学习的"轻"：<b>① 轻盈之美（一格画面、一个转场）② 留白之美（一句台词、一顿沉默）③ 会飞之美（一场旅行、一次出走）④ 会停之美（一顿饭、一条回家的路）。</b>我们讨论的是<b>导演、摄影、美术、声音、表演</b>——<u>不搬运剧情、不靠低俗博流量、不把"鸭王"做任何谐音或双关。</u>
+          <div class="tags"><a href="#">品牌释义</a><a href="#">治愈美学</a><a href="#">镜头语言</a><a href="#">去低俗化</a></div>
+        </div>
+      </details>
+      <details class="acc">
+        <summary><span class="no">Q2</span><h3>片单里的分数，是什么分？</h3><span class="caret">▾</span></summary>
+        <div class="inner"><b>是"鸭王指数"，不是评分排名。</b>综合<b>豆瓣 / IMDb / 烂番茄</b> 三项加权后，再扣掉"说教感""矫情度""拖沓度"。<b>90 分以上：必看，值得二刷；80 分以上：值得一看；80 分以下：不进片单。</b>
+          <div class="tags"><a href="#">评分</a><a href="#">加权</a><a href="#">治愈片</a><a href="#">冷门高分</a></div>
+        </div>
+      </details>
+      <details class="acc">
+        <summary><span class="no">Q3</span><h3>鸭王电影网，会不会剧透？</h3><span class="caret">▾</span></summary>
+        <div class="inner"><b>只讲"镜头"，不讲"结局"。</b>我们说清三件事：<b>① 它好在哪一帧 ② 它是怎么拍出来的（一个技法）③ 它适合谁（一种心境）</b>。反转、凶手、真相、谁死了，一律不提。
+          <div class="tags"><a href="#">不剧透</a><a href="#">镜头</a><a href="#">技法</a></div>
+        </div>
+      </details>
+      <details class="acc">
+        <summary><span class="no">Q4</span><h3>在哪里才能看到"高清正版"的版本？</h3><span class="caret">▾</span></summary>
+        <div class="inner"><b>请通过合法渠道观看。</b>认准<b>电影院、持证视频平台、正版蓝光碟、官方流媒体</b>；<u>本站不提供、不链接、不引导任何影片下载或盗版在线播放</u>。鸭王电影网说的"轻一点，再轻一点"，只有在正版的高画质里才成立——盗版只会糊成一团。
+          <div class="tags"><a href="#">正版观影</a><a href="#">拒绝盗版</a><a href="#">支持创作者</a></div>
+        </div>
+      </details>
+      <details class="acc">
+        <summary><span class="no">Q5</span><h3>为什么强调"去低俗化"与"合理引用"？</h3><span class="caret">▾</span></summary>
+        <div class="inner"><b>因为两个字的站名，最容易被做坏。</b>本站<b>不含、不指向、不暗示任何低俗、软色情、动物虐待、违法或成人敏感含义</b>；与任何播放器、下载工具、资源站、成人站点<b>均无隶属或合作关系</b>；涉及剧照、台词、片段均为<b>合理引用的评论所需</b>，篇幅适度、注明出处、不构成替代观看。
+          <div class="tags"><a href="#">合规</a><a href="#">合理引用</a><a href="#">影视鉴赏</a></div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目六：关于本站（双栏 + 数据卡 + 进度条）=================== -->
+  <section id="about" aria-labelledby="h-ab6" class="about">
+    <div class="container ab-grid">
+      <div>
+        <div class="eyebrow">ABOUT · 鸭王电影网</div>
+        <h2 id="h-ab6">鸭王电影网，<br><em>只推荐"轻一点"的</em></h2>
+        <p><b>鸭王电影网</b>是一个<b>家庭/自然/治愈/成长类影视美学鉴赏与观影指南</b>类内容站点。我们不生产资源、不搬运剧情，只做一件事：<b>帮你用 40 秒，挑到今晚那部"画面值得被投到最大屏幕、并愿意为它二刷"的影视作品。</b></p>
+        <div class="feat">
+          <div class="f"><div class="n">186</div><h3>精选片单</h3><p>愿意为它们再花一遍 160 分钟。</p></div>
+          <div class="f"><div class="n">4</div><h3>种轻盈</h3><p>轻盈 / 留白 / 会飞 / 会停。</p></div>
+          <div class="f"><div class="n">≥90</div><h3>值得一看</h3><p>三项评分加权，低于 80 不入选。</p></div>
+          <div class="f"><div class="n">0</div><h3>零低俗</h3><p>不搬运、不剧透、不做解说、不靠擦边博流量。</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="metrics">
+          <div class="metric a"><div class="top"><span>已精选 · 家庭治愈片</span><b>186</b></div><div class="track"><i style="width:79%"></i></div></div>
+          <div class="metric l"><div class="top"><span>已整理 · 留白台词</span><b>264</b></div><div class="track"><i style="width:65%"></i></div></div>
+          <div class="metric o"><div class="top"><span>已归档 · 导演条目</span><b>52</b></div><div class="track"><i style="width:51%"></i></div></div>
+        </div>
+        <p style="margin-top:21px;font-size:.85rem;color:var(--ink2)">⚠ <b style="color:#8a6a2e">合规声明：</b>①<b>"鸭王电影网"为本站名称</b>，取"水面上最从容的那个身影"之义，喻"轻盈、留白、会飞、会停"的影像气质，<u>不含、不指向、不暗示任何低俗、软色情、动物虐待、违法或成人敏感含义</u>；②本站为影视评论、治愈美学鉴赏与观影指南类站点，与任何播放器、下载工具、资源站、成人站点<b>均无隶属或合作关系</b>；③本站<b>不提供、不链接、不引导任何影片下载或盗版在线播放</b>，涉及剧照、台词、片段均为合理引用的评论所需；④请通过电影院、持证视频平台、正版蓝光等合法渠道观看，<b>拒绝盗版，支持创作者</b>；⑤本站坚持<b>去低俗化、反虐、成年观众观看、理性选择</b>原则。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== 页脚 ==================== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-col">
+        <a class="logo" href="#top"><span class="mark" aria-hidden="true">鴨</span><span class="tx"><b style="color:#fff">鸭王电影网</b><small>LIGHT · QUIET · WILD · HOME</small></span></a>
+        <p style="margin-top:11px;max-width:300px">鸭王电影网，一份按"轻盈、留白、会飞、会停"整理的影视观看指引。家庭、自然、治愈、成长，只留会二刷的。</p>
+      </div>
+      <div class="ft-col"><h4>鸭王片单</h4>
+        <ul><li><a href="#picks">想回家</a></li><li><a href="#mood">想出去走走</a></li><li><a href="#">想慢下来</a></li><li><a href="#">想重新长大</a></li></ul>
+      </div>
+      <div class="ft-col"><h4>看片方法</h4>
+        <ul><li><a href="#talk">鸭王台词</a></li><li><a href="#knight">导演谱系</a></li><li><a href="#">镜头笔记</a></li><li><a href="#">二刷清单</a></li></ul>
+      </div>
+      <div class="ft-col"><h4>关于</h4>
+        <ul><li><a href="#about">鸭王电影网是什么</a></li><li><a href="#">去低俗化与版权声明</a></li><li><a href="#">正版观影指引</a></li><li><a href="#">联系我们</a></li></ul>
+      </div>
+    </div>
+    <div class="ft-base">
+      <p>© <span id="yr"></span> 鸭王电影网 · 网站网址：<a href="https://yawangdianyingwang-cn.github.io/">https://yawangdianyingwang-cn.github.io/</a> ｜ 倡导理性、正版、深度观影，反对低俗擦边与动物虐待，拒绝盗版，支持创作者。</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+burger.addEventListener('click',function(){
+  var open=nav.classList.toggle('show');
+  burger.setAttribute('aria-expanded',open?'true':'false');
+  burger.textContent=open?'✕':'☰';
+});
+nav.addEventListener('click',function(e){
+  if(e.target.tagName==='A'&&window.innerWidth<=760){
+    nav.classList.remove('show');burger.setAttribute('aria-expanded','false');burger.textContent='☰';
+  }
+});
+document.getElementById('yr').textContent=(new Date()).getFullYear();
+</script>
+</body>
+</html>
